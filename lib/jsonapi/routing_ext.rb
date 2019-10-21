@@ -21,6 +21,7 @@ module ActionDispatch
           res = JSONAPI::Resource.resource_klass_for(resource_type_with_module_prefix(@resource_type))
 
           res._routed = true
+          res._single_resource = true
 
           unless res.singleton?
             warn "Singleton routes created for non singleton resource #{res}. Links may not be generated correctly."

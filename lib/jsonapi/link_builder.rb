@@ -124,7 +124,11 @@ module JSONAPI
 
     def resources_path(source_klass)
       @_resources_path ||= {}
-      @_resources_path[source_klass] ||= formatted_module_path_from_class(source_klass) + format_route(source_klass._type.to_s)
+      @_resources_path[source_klass] ||= if source_klass._single_resource
+        formatted_module_path_from_class(source_klass) + format_route(source_klass._type.to_s).singularize
+      else
+        formatted_module_path_from_class(source_klass) + format_route(source_klass._type.to_s)
+      end
     end
 
     def resource_path(source)

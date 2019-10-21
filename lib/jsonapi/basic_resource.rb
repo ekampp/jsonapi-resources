@@ -502,7 +502,7 @@ module JSONAPI
         end
       end
 
-      attr_accessor :_attributes, :_relationships, :_type, :_model_hints, :_routed, :_warned_missing_route
+      attr_accessor :_attributes, :_relationships, :_type, :_model_hints, :_routed, :_warned_missing_route, :_single_resource
       attr_writer :_allowed_filters, :_paginator, :_allowed_sort
 
       def create(context)

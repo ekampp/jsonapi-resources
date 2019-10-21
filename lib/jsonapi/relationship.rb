@@ -7,7 +7,7 @@ module JSONAPI
 
     attr_writer :allow_include
 
-    attr_accessor :_routed, :_warned_missing_route
+    attr_accessor :_routed, :_warned_missing_route, :_single_resource
 
     def initialize(name, options = {})
       @name = name.to_s
